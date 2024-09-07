@@ -3,12 +3,51 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DiceRoller.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0">
 
-        </VerticalStackLayout>
-    </ScrollView>
+    <VerticalStackLayout
+        Spacing = "40"
+        Padding = "30,0"
+        VerticalOptions = "Center">
+
+        <Label
+            Text = "Rolador de Dados"
+            FontSize = "48"
+            HorizontalOptions = "Center" />
+
+        <Label
+            Text = "0"
+            FontSize = "96"
+            x:Name = "DiceResult"
+            HorizontalOptions = "Center"/>
+
+        <Picker 
+            x:Name = "DicePicker"
+            HorizontalOptions = "Center"
+            Title = "Quantidade de lados:"
+            WidthRequest = "250">
+            <Picker.ItemsSource>
+                <x:Array Type = "{x:Type x:String}">
+                    <x:String> 4 </x:String>
+                    <x:String> 6 </x:String>
+                    <x:String> 8 </x:String>
+                    <x:String> 10 </x:String>
+                    <x:String> 12 </x:String>
+                    <x:String> 20 </x:String>
+                    <x:String> 100 </x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+
+        <Button
+            Text = "ROLAR O DADO"
+            x:Name = "RollerButton"
+            Clicked = "RollerButton_Clicked"
+            HorizontalOptions = "Center"
+            WidthRequest = "150"
+            BackgroundColor = "Gray"/>
+
+    </VerticalStackLayout>
+        
 
 </ContentPage>
